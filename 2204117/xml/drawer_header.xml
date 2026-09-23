@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="18dp"
+    android:background="#0B2340">
+
+    <!-- APP LOGO -->
+
+    <ImageView
+        android:id="@+id/imgDrawerLogo"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        android:contentDescription="Smart DUET Logo" />
+
+    <!-- TITLE -->
+
+    <TextView
+        android:id="@+id/tvDrawerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Smart DUET"
+        android:textColor="#FFFFFF"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:fontFamily="sans" />
+
+    <!-- SUBTITLE -->
+
+    <TextView
+        android:id="@+id/tvDrawerSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="Admission Management System"
+        android:textColor="#B8CCE8"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:fontFamily="sans" />
+
+</LinearLayout>
