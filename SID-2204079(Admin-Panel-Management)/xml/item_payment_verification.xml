@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APPLICATION ID"
+                android:textColor="#829AB1"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvApplicationId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="DUET-2026-00000000"
+                android:textColor="#102A43"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPaymentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="11dp"
+            android:paddingEnd="11dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="PENDING"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="#E6ECF2"/>
+
+
+    <TextView
+        android:id="@+id/tvStudentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Student Name"
+        android:textColor="#102A43"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/tvPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Phone"
+        android:textColor="#627D98"
+        android:textSize="13sp"/>
+
+
+    <TextView
+        android:id="@+id/tvPaymentMethod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Payment Method"
+        android:textColor="#486581"
+        android:textSize="13sp"/>
+
+
+    <TextView
+        android:id="@+id/tvTransactionId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Transaction ID"
+        android:textColor="#486581"
+        android:textSize="13sp"/>
+
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="৳ 1200"
+        android:textColor="#102A43"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+
+
+    <!-- ADMIN ACTIONS -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="3dp"
+            android:text="MARK PAID"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnUnpaid"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:text="MARK UNPAID"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnRejectApplication"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:layout_marginStart="3dp"
+            android:text="REJECT"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</LinearLayout>

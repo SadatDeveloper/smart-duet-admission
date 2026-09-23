@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="10dp"
+
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="1dp"
+
+    app:strokeColor="#DCE6F0"
+    app:strokeWidth="1dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/tvAdminName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin"
+            android:textColor="#102F50"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvAdminEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:text="admin@gmail.com"
+            android:textColor="#52657A"
+            android:textSize="13sp" />
+
+
+        <TextView
+            android:id="@+id/tvAdminRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:text="Administrator"
+            android:textColor="#1769FF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvAdminStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:background="#EAF7EF"
+
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+
+            android:text="Active"
+
+            android:textColor="#159447"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDisableAdmin"
+
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Disable Access"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+
+            app:cornerRadius="12dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#D64545" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
