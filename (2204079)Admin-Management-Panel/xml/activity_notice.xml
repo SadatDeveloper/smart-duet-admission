@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F5F9">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3F5F9">
+
+        <!-- FIXED HEADER -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fixedDashboardHeader"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Menu"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_menu" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Admission Notices"
+                        android:textColor="#173F6B"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Smart DUET Admission Management System"
+                        android:textColor="#687385"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnProfile"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardBackgroundColor="#EEF5FF"
+                    app:cardCornerRadius="23dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#1769FF"
+                    app:strokeWidth="1dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:contentDescription="Profile"
+                        android:src="@drawable/ic_profile" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ScrollView
+            android:id="@+id/noticeScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/fixedDashboardHeader"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:paddingBottom="32dp">
+
+                <!-- PAGE HEADER -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvBackNotice"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="#FFFFFF"
+                        android:gravity="center"
+                        android:text="‹"
+                        android:textColor="#2459A6"
+                        android:textSize="34sp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Admission Notices"
+                            android:textColor="#26364D"
+                            android:textSize="25sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Latest DUET admission announcements"
+                            android:textColor="#687385"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- HERO -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:cardBackgroundColor="#2458A5"
+                    app:cardCornerRadius="26dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="190dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="26dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Admission Notices &amp; Updates"
+                                android:textColor="#FFFFFF"
+                                android:textSize="27sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Stay updated with important DUET admission announcements, schedules and instructions."
+                                android:textColor="#DDE8FA"
+                                android:textSize="15sp"
+                                android:lineSpacingExtra="3dp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="76dp"
+                            android:layout_height="76dp"
+                            android:gravity="center"
+                            android:text="📢"
+                            android:textSize="48sp"
+                            android:alpha="0.75" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SEARCH -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#DDE2EA"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="48dp"
+                            android:layout_height="52dp"
+                            android:gravity="center"
+                            android:text="⌕"
+                            android:textColor="#26364D"
+                            android:textSize="30sp" />
+
+                        <EditText
+                            android:id="@+id/etSearchNotice"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/transparent"
+                            android:hint="Search dynamic notices..."
+                            android:inputType="text"
+                            android:textColor="#26364D"
+                            android:textColorHint="#8A94A4"
+                            android:textSize="16sp"
+                            android:paddingStart="6dp"
+                            android:paddingEnd="6dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- SECTION TITLE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Latest Notices"
+                        android:textColor="#26364D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNoticeCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#2E6BC1"
+                        android:paddingStart="12dp"
+                        android:paddingTop="7dp"
+                        android:paddingEnd="12dp"
+                        android:paddingBottom="7dp"
+                        android:text="1 Notice"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- =====================================================
+                     NOTICE 1 — STATIC. DO NOT REMOVE / DO NOT REPLACE.
+                     ===================================================== -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardNotice1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="#D9DFE8"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="18dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="62dp"
+                            android:layout_height="62dp"
+                            android:gravity="center"
+                            android:text="📢"
+                            android:textSize="31sp"
+                            android:background="#EAF1FC" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Important"
+                                android:textColor="#FFFFFF"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:background="#D94242"
+                                android:paddingStart="9dp"
+                                android:paddingTop="5dp"
+                                android:paddingEnd="9dp"
+                                android:paddingBottom="5dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:text="DUET Admission Circular 2026"
+                                android:textColor="#2D3C52"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Admission application process for the 2026 academic session has been announced."
+                                android:textColor="#687385"
+                                android:textSize="13sp"
+                                android:lineSpacingExtra="2dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="9dp"
+                                android:text="24 August 2026"
+                                android:textColor="#2459A6"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnNotice1View"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="10dp"
+                            android:contentDescription="View Notice"
+                            app:backgroundTint="#EAF1FC"
+                            app:cornerRadius="16dp"
+                            app:icon="@android:drawable/ic_menu_view"
+                            app:iconTint="#2459A6"
+                            app:iconSize="24dp"
+                            app:rippleColor="#332459A6" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- =====================================================
+                     NOTICE 2+ — DYNAMIC FROM FIRESTORE.
+                     ===================================================== -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="More Notices"
+                    android:textColor="#26364D"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/progressNotices"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/tvEmptyNotices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="No additional published notices available."
+                    android:textColor="#718096"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerNotices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    android:paddingBottom="24dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Always verify important information with the official DUET admission authority."
+                    android:textColor="#8A94A4"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- IN-PLACE PDF VIEWER. Card 1 opens here without leaving NoticeActivity. -->
+        <FrameLayout
+            android:id="@+id/pdfViewerContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#E9EDF3"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/fixedDashboardHeader"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="vertical">
+
+                <LinearLayout
+                    android:id="@+id/pdfPagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </ScrollView>
+
+            <ProgressBar
+                android:id="@+id/pdfProgress"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/pdfError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="24dp"
+                android:textColor="#26364D"
+                android:textSize="15sp"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="0dp"
+            android:layout_height="68dp"
+            android:background="#FFFFFF"
+            app:itemIconTint="#173F6B"
+            app:itemTextColor="#173F6B"
+            app:itemRippleColor="#E3F2FD"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#102A56"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

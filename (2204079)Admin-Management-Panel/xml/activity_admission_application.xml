@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7FB">
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- FIXED HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="#FFFFFF"
+            android:gravity="center_vertical"
+            android:elevation="5dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menu" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Smart DUET"
+                    android:textColor="#173F6B"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admission System"
+                    android:textColor="#64748B"
+                    android:textSize="12sp"
+                    android:layout_marginTop="1dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/ic_profile"
+                android:background="@drawable/bg_profile_circle"
+                android:padding="9dp"
+                android:contentDescription="Profile" />
+
+        </LinearLayout>
+
+        <!-- SCROLLABLE MIDDLE -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:clipToPadding="false"
+            android:overScrollMode="ifContentScrolls">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- PAGE TITLE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#1769FF"
+                    android:padding="22dp"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apply for Admission"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Complete your undergraduate admission application step by step."
+                        android:textColor="#EAF2FF"
+                        android:textSize="14sp"
+                        android:layout_marginTop="7dp"
+                        android:lineSpacingExtra="2dp" />
+
+                </LinearLayout>
+
+                <!-- ROADMAP -->
+                <LinearLayout
+                    android:id="@+id/stepIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#FFFFFF"
+                    android:elevation="2dp"
+                    android:paddingTop="18dp"
+                    android:paddingBottom="18dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:layout_marginBottom="14dp">
+
+                    <LinearLayout
+                        android:id="@+id/step1Container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step1Number"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/bg_step_active" />
+
+                        <TextView
+                            android:id="@+id/step1Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Personal"
+                            android:textColor="#1769FF"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step2Number"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#64748B"
+                            android:background="@drawable/bg_step_inactive" />
+
+                        <TextView
+                            android:id="@+id/step2Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Academic"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step3Number"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#64748B"
+                            android:background="@drawable/bg_step_inactive" />
+
+                        <TextView
+                            android:id="@+id/step3Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Department"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step4Number"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#64748B"
+                            android:background="@drawable/bg_step_inactive" />
+
+                        <TextView
+                            android:id="@+id/step4Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Documents"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/step5Number"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="5"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="#64748B"
+                            android:background="@drawable/bg_step_inactive" />
+
+                        <TextView
+                            android:id="@+id/step5Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Payment &amp; Review"
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:gravity="center"
+                            android:layout_marginTop="6dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- STEP 1 -->
+                <LinearLayout
+                    android:id="@+id/layoutStep1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Information"
+                        android:textColor="#172B4D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your profile information is automatically loaded from your account."
+                        android:textColor="#1554C7"
+                        android:textSize="13sp"
+                        android:background="#EEF5FF"
+                        android:padding="14dp"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full Name *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp" />
+
+                    <EditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter your full name"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Father's Name *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etFatherName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter father's name"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mother's Name *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etMotherName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter mother's name"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="01XXXXXXXXX"
+                        android:inputType="phone"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Address"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="example@gmail.com"
+                        android:inputType="textEmailAddress"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date of Birth *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etDateOfBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="DD/MM/YYYY"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gender *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:backgroundTint="#CBD5E1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NID / Birth Registration Number *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etNidNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter NID or birth registration number"
+                        android:inputType="number"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <Button
+                        android:id="@+id/btnStep1Next"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Continue to Academic Information  →"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:backgroundTint="#1769FF"
+                        android:layout_marginTop="22dp" />
+
+                </LinearLayout>
+
+                <!-- STEP 2 -->
+                <LinearLayout
+                    android:id="@+id/layoutStep2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Academic Information"
+                        android:textColor="#172B4D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enter your academic information exactly as shown on your certificates."
+                        android:textColor="#64748B"
+                        android:textSize="13sp"
+                        android:layout_marginTop="6dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SSC / Equivalent GPA *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp" />
+
+                    <EditText
+                        android:id="@+id/etSscGpa"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="0.00 - 5.00"
+                        android:inputType="numberDecimal"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diploma CGPA *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etDiplomaCgpa"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="0.00 - 4.00"
+                        android:inputType="numberDecimal"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diploma Passing Year *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spPassingYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diploma Technology *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spDiplomaTechnology"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="22dp">
+
+                        <Button
+                            android:id="@+id/btnStep2Previous"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="← Previous"
+                            android:textColor="#1769FF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#EEF5FF" />
+
+                        <Space
+                            android:layout_width="12dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/btnStep2Next"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Continue →"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#1769FF" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- STEP 3 -->
+                <LinearLayout
+                    android:id="@+id/layoutStep3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Department Selection"
+                        android:textColor="#172B4D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your eligible departments are automatically determined according to your Diploma Technology."
+                        android:textColor="#1554C7"
+                        android:textSize="13sp"
+                        android:background="#EEF5FF"
+                        android:padding="14dp"
+                        android:layout_marginTop="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Department *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp" />
+
+                    <Spinner
+                        android:id="@+id/spDepartment"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp" />
+
+                    <TextView
+                        android:id="@+id/tvEligibility"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Eligible departments will appear here."
+                        android:textColor="#087443"
+                        android:textSize="13sp"
+                        android:background="#EEFFF4"
+                        android:padding="14dp"
+                        android:layout_marginTop="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp">
+
+                        <Button
+                            android:id="@+id/btnStep3Previous"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="← Previous"
+                            android:textColor="#1769FF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#EEF5FF" />
+
+                        <Space
+                            android:layout_width="12dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/btnStep3Next"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Continue →"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#1769FF" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- STEP 4 -->
+                <LinearLayout
+                    android:id="@+id/layoutStep4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documents &amp; Quota"
+                        android:textColor="#172B4D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Upload clear, readable files. Images: maximum 100 KB. PDF: maximum 3 MB."
+                        android:textColor="#1554C7"
+                        android:textSize="13sp"
+                        android:background="#EEF5FF"
+                        android:padding="14dp"
+                        android:layout_marginTop="16dp" />
+
+                    <!-- PHOTO -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Applicant Photo *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp" />
+
+                    <Button
+                        android:id="@+id/btnPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Choose Applicant Photo"
+                        android:textColor="#1769FF"
+                        android:textStyle="bold"
+                        android:backgroundTint="#EEF5FF" />
+
+                    <TextView
+                        android:id="@+id/tvPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen • JPG/JPEG/PNG • Max 100 KB"
+                        android:textColor="#64748B"
+                        android:textSize="12sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp" />
+
+                    <!-- SIGNATURE -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Signature *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Button
+                        android:id="@+id/btnSignature"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Choose Signature"
+                        android:textColor="#1769FF"
+                        android:textStyle="bold"
+                        android:backgroundTint="#EEF5FF" />
+
+                    <TextView
+                        android:id="@+id/tvSignature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen • JPG/JPEG/PNG • Max 100 KB"
+                        android:textColor="#64748B"
+                        android:textSize="12sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp" />
+
+                    <!-- NID -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NID / Birth Registration Document *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Button
+                        android:id="@+id/btnNidDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Choose NID / Birth Document"
+                        android:textColor="#1769FF"
+                        android:textStyle="bold"
+                        android:backgroundTint="#EEF5FF" />
+
+                    <TextView
+                        android:id="@+id/tvNidDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen • JPG/JPEG/PNG/PDF • PDF max 3 MB"
+                        android:textColor="#64748B"
+                        android:textSize="12sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp" />
+
+                    <!-- QUOTA -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quota *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <Spinner
+                        android:id="@+id/spQuota"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp" />
+
+                    <TextView
+                        android:id="@+id/quotaDocumentLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Quota Supporting Document *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:layout_marginTop="16dp" />
+
+                    <Button
+                        android:id="@+id/btnQuotaDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:text="Choose Quota Document"
+                        android:textColor="#1769FF"
+                        android:textStyle="bold"
+                        android:backgroundTint="#EEF5FF"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvQuotaDocument"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No file chosen • JPG/JPEG/PNG/PDF • PDF max 3 MB"
+                        android:textColor="#64748B"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="4dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp">
+
+                        <Button
+                            android:id="@+id/btnStep4Previous"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="← Previous"
+                            android:textColor="#1769FF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#EEF5FF" />
+
+                        <Space
+                            android:layout_width="12dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/btnStep4Next"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Review Application →"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#1769FF" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- STEP 5 -->
+                <LinearLayout
+                    android:id="@+id/layoutStep5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="20dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="14dp"
+                    android:elevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment &amp; Review"
+                        android:textColor="#172B4D"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment Method *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="20dp" />
+
+                    <Spinner
+                        android:id="@+id/spPaymentMethod"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Payment / Transaction ID *"
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/etTransactionId"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Enter payment transaction ID"
+                        android:textSize="15sp"
+                        android:padding="13dp"
+                        android:backgroundTint="#CBD5E1"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Application Summary"
+                        android:textColor="#172B4D"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="22dp" />
+
+                    <LinearLayout
+                        android:id="@+id/applicationSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F8FAFC"
+                        android:padding="14dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tvSummaryApplicationId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Application ID\nWill be generated before submission"
+                            android:textColor="#1769FF"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:background="#EEF5FF"
+                            android:padding="12dp"
+                            android:layout_marginBottom="6dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Applicant Name"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryTechnology"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Diploma Technology"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Diploma Passing Year"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryDepartment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Selected Department"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvSummaryQuota"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Quota"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:padding="8dp" />
+
+                    </LinearLayout>
+
+
+                    <!-- PROFESSIONAL FINAL REVIEW -->
+                    <LinearLayout
+                        android:id="@+id/professionalReviewCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="#F8FAFC"
+                        android:padding="16dp"
+                        android:layout_marginTop="18dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Final Review"
+                                    android:textColor="#172B4D"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Check your information before submitting"
+                                    android:textColor="#64748B"
+                                    android:textSize="12sp"
+                                    android:layout_marginTop="3dp" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvReviewReady"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="READY"
+                                android:textColor="#087443"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:background="#DCFCE7"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E2E8F0"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewPersonal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="✓ Personal Information"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewAcademic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="✓ Academic Information"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewDepartment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="✓ Department Selection"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewDocuments"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="✓ Required Documents"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp" />
+
+                        <TextView
+                            android:id="@+id/tvReviewPayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="✓ Payment Information"
+                            android:textColor="#334155"
+                            android:textSize="14sp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Once you confirm, your application will be uploaded and submitted."
+                            android:textColor="#64748B"
+                            android:textSize="12sp"
+                            android:lineSpacingExtra="2dp"
+                            android:layout_marginTop="8dp" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/cbDeclaration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="I declare that all information provided in this application is correct and complete."
+                        android:textColor="#334155"
+                        android:textSize="13sp"
+                        android:layout_marginTop="14dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp">
+
+                        <Button
+                            android:id="@+id/btnStep5Previous"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="← Previous"
+                            android:textColor="#1769FF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#EEF5FF" />
+
+                        <Space
+                            android:layout_width="12dp"
+                            android:layout_height="1dp" />
+
+                        <Button
+                            android:id="@+id/btnSubmitApplication"
+                            android:layout_width="0dp"
+                            android:layout_height="52dp"
+                            android:layout_weight="1"
+                            android:text="Submit Application"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:backgroundTint="#168A5B" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- FIXED FOOTER -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="#FFFFFF"
+            android:elevation="6dp"
+            app:itemIconTint="#173F6B"
+            app:itemTextColor="#173F6B"
+            app:itemRippleColor="#E3F2FD"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu" />
+
+    </LinearLayout>
+
+    <!-- DRAWER: ORIGINAL DASHBOARD DESIGN, UNCHANGED -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="285dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#0B2340"
+        android:backgroundTint="#0B2340"
+        android:elevation="16dp"
+        android:fitsSystemWindows="true"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:headerLayout="@layout/drawer_header"
+        app:itemHorizontalPadding="20dp"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:itemVerticalPadding="10dp"
+        app:itemRippleColor="#1FFFFFFF"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
